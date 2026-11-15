@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swapshot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Pixelify+Sans:wght@400;600&family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <script type="module" crossorigin src="./assets/index-F8EwuVZi.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-D1wAyIx7.css">
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <div class="logo"><img id="logoBot" alt="" /><span>SWAP<b>SHOT</b></span></div>
+        <div id="sectorChip" class="sectorChip"></div>
+        <div class="track">
+          <div class="trackLabel">ROUND <b id="roundNum">1</b><span id="roundMax">/16</span></div>
+          <div id="pips" class="pips"></div>
+        </div>
+        <div class="attempts" title="Test runs left this round">
+          <span class="lbl">TESTS</span>
+          <div id="cells" class="cells"></div>
+        </div>
+        <div class="tools">
+          <button id="musicBtn" class="icon" title="Music (M)">♪</button>
+          <button id="sfxBtn" class="icon" title="Sound effects">SFX</button>
+          <button id="helpBtn" class="icon" title="How to play">?</button>
+          <button id="menuBtn" class="icon wide" title="Menu (Esc)">☰ MENU</button>
+        </div>
+      </header>
+
+      <main id="main">
+        <div id="arenaCol" class="arenaCol">
+          <div class="arena frame">
+            <canvas id="board"></canvas>
+            <div id="wipe" class="wipe"></div>
+            <div id="ticker" class="ticker">PLANNING</div>
+            <div id="banner" class="banner"></div>
+          </div>
+        </div>
+
+        <div class="side">
+          <section class="panel enemy frame">
+            <div class="panelHead">
+              <img id="botFace" class="face" alt="" />
+              <div>
+                <h2>SCRAP <small>ENEMY PROGRAM</small></h2>
+                <p class="sub">Moves first every turn. Gets a new program each round.</p>
+                <div id="arenaInfo" class="arenaInfo"></div>
+              </div>
+              <div id="botCount" class="count"></div>
+            </div>
+            <div id="botProg" class="prog"></div>
+          </section>
+
+          <section class="panel you frame">
+            <div class="panelHead">
+              <img id="playerFace" class="face" alt="" />
+              <div>
+                <h2>BOLT <small>YOUR PROGRAM</small></h2>
+                <p class="sub">You keep these cards between rounds.</p>
+              </div>
+            </div>
+            <div id="playerProg" class="prog"></div>
+          </section>
+
+          <section class="actions frame">
+            <div id="swapInfo" class="swapInfo"></div>
+            <div class="row">
+              <button id="runBtn" class="btn primary" disabled>▶ TEST SWAP</button>
+              <button id="clearBtn" class="btn" disabled>CLEAR</button>
+              <button id="skipBtn" class="btn hidden">SKIP ▶▶</button>
+              <button id="newRunBtn" class="btn primary hidden">NEW RUN</button>
+              <button id="resultsBtn" class="btn hidden">RESULTS</button>
+              <button id="sectorsBtn" class="btn hidden">SECTORS</button>
+              <div class="speed" role="group" aria-label="Playback speed">
+                <button data-speed="1" class="seg on">1X</button>
+                <button data-speed="2" class="seg">2X</button>
+                <button data-speed="4" class="seg">4X</button>
+              </div>
+            </div>
+          </section>
+
+          <div class="bottom">
+            <section id="inspect" class="inspect frame"></section>
+            <section class="logBox frame">
+              <div class="logHead">BATTLE LOG</div>
+              <div id="log" class="log"></div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div id="overlay" class="overlay hidden"></div>
+    <div id="tut" class="tut hidden"></div>
+    <div class="scanlines"></div>
+  </body>
+</html>

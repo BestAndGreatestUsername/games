@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Game Shelf</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<style>
+:root {
+  --bg: #15171b; --surface: #1e2127; --fg: #e8e9ec; --muted: #9aa0ab; --line: #30343c;
+  --c-farm: #7cc24f; --c-swap: #6ea2ff; --c-tower: #ff7a45; --c-skill: #ff6b9d;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.55 "IBM Plex Sans", system-ui, sans-serif; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 48px 16px 64px; display: grid; gap: 32px; }
+h1, h2 { font-family: "Silkscreen", "Courier New", monospace; margin: 0; }
+h1 { font-size: clamp(32px, 7vw, 52px); line-height: 1.05; }
+.lede { color: var(--muted); margin: 8px 0 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 18px; }
+a.game { --c: var(--fg); display: grid; gap: 8px; padding: 22px; border-radius: 8px; text-decoration: none; color: inherit;
+  background: var(--surface); border: 1px solid var(--line); border-left: 8px solid var(--c); transition: transform .12s, border-color .12s; }
+a.game:hover, a.game:focus-visible { transform: translateY(-2px); border-color: var(--c); outline: none; }
+a.game h2 { color: var(--c); font-size: 22px; }
+.tag { font-style: italic; color: var(--muted); margin: 0; }
+.how { margin: 0; font-size: 14px; }
+.play { font-family: "Silkscreen", monospace; color: var(--c); font-size: 14px; margin-top: 4px; }
+footer { color: var(--muted); font-size: 13px; }
+@media (prefers-reduced-motion: reduce) { a.game { transition: none; } a.game:hover { transform: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Game Shelf</h1>
+    <p class="lede">Four browser games. Pick one and play. Works best with a keyboard and mouse.</p>
+  </header>
+  <div class="grid">
+    <a class="game" href="farmer-tank/" style="--c:var(--c-farm)">
+      <h2>Farmer Tank: Keep Them In!</h2>
+      <p class="tag">You're a fragile robot in an endless living world. Catch wacky creatures and grow the biggest farm.</p>
+      <p class="how">WASD to move, Shift to sprint, left click to shoot, right click to throw, E to gather. Online co-op with a 5-letter code.</p>
+      <span class="play">Play ▸</span>
+    </a>
+    <a class="game" href="swapshot/" style="--c:var(--c-swap)">
+      <h2>Swapshot</h2>
+      <p class="tag">One swap per round. Make it count.</p>
+      <p class="how">A puzzle card game. Swap any two cards in the robots' programs, then run the round. Every round can be won.</p>
+      <span class="play">Play ▸</span>
+    </a>
+    <a class="game" href="tower-of-babble/" style="--c:var(--c-tower)">
+      <h2>Tower of Babble</h2>
+      <p class="tag">You are a baby. You can't walk. You have a shotgun.</p>
+      <p class="how">Push the muzzle into things to shove yourself around, and click to fire. Recoil launches you. Climb the zombie tower.</p>
+      <span class="play">Play ▸</span>
+    </a>
+    <a class="game" href="skill-issue/" style="--c:var(--c-skill)">
+      <h2>Skill Issue</h2>
+      <p class="tag">The most annoying platformer ever made. On purpose.</p>
+      <p class="how">Arrows or A/D to move. Space, W, Up, Z or K to jump. Tap jumps high, hold jumps low. Good luck.</p>
+      <span class="play">Play ▸</span>
+    </a>
+  </div>
+  <footer>Everything is drawn and synthesized in code. Scores and saves stay in your own browser.</footer>
+</div>
+</body>
+</html>
