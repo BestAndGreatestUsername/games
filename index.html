@@ -8,7 +8,7 @@
 <style>
 :root {
   --bg: #15171b; --surface: #1e2127; --fg: #e8e9ec; --muted: #9aa0ab; --line: #30343c;
-  --c-farm: #7cc24f; --c-swap: #6ea2ff; --c-tower: #ff7a45; --c-skill: #ff6b9d;
+  --c-farm: #7cc24f; --c-swap: #6ea2ff; --c-tower: #ff7a45; --c-skill: #ff6b9d; --c-strange: #fb7185;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -33,7 +33,7 @@ footer { color: var(--muted); font-size: 13px; }
 <div class="wrap">
   <header>
     <h1>Game Shelf</h1>
-    <p class="lede">Four browser games. Pick one and play. Works best with a keyboard and mouse.</p>
+    <p class="lede">Five browser games. Pick one and play. Works best with a keyboard and mouse.</p>
   </header>
   <div class="grid">
     <a class="game" href="farmer-tank/" style="--c:var(--c-farm)">
@@ -58,6 +58,12 @@ footer { color: var(--muted); font-size: 13px; }
       <h2>Skill Issue</h2>
       <p class="tag">The most annoying platformer ever made. On purpose.</p>
       <p class="how">Arrows or A/D to move. Space, W, Up, Z or K to jump. Tap jumps high, hold jumps low. Good luck.</p>
+      <span class="play">Play ▸</span>
+    </a>
+    <a class="game" href="strange-company/" style="--c:var(--c-strange)">
+      <h2>Strange Company</h2>
+      <p class="tag">The Nyetalax are spreading. Your crew is weird, and some of them will betray you. Get the barge to the coast.</p>
+      <p class="how">WASD to move, mouse to aim and attack, Space to dodge. E searches, T talks, R is your special. No cure for infection, so check arms before you recruit.</p>
       <span class="play">Play ▸</span>
     </a>
   </div>
