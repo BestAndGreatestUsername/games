@@ -1,73 +1,203 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Game Shelf</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=IBM+Plex+Sans:wght@400;600&display=swap">
-<style>
-:root {
-  --bg: #15171b; --surface: #1e2127; --fg: #e8e9ec; --muted: #9aa0ab; --line: #30343c;
-  --c-farm: #7cc24f; --c-swap: #6ea2ff; --c-tower: #ff7a45; --c-skill: #ff6b9d; --c-strange: #fb7185;
-  color-scheme: dark;
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Game Shelf</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Press+Start+2P&family=Pixelify+Sans:wght@500;700&family=UnifrakturCook:wght@700&family=Bungee&family=Cormorant+Garamond:ital,wght@1,600&family=Lilita+One&family=Rye&family=VT323&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap"><style>
+:root{
+  --room:#0c0b10; --room2:#15131c; --ink:#f1eef7; --dim:#a39fb3; --line:rgba(255,255,255,.1);
+  --body:"Inter",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  color-scheme:dark;
 }
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.55 "IBM Plex Sans", system-ui, sans-serif; }
-.wrap { max-width: 960px; margin: 0 auto; padding: 48px 16px 64px; display: grid; gap: 32px; }
-h1, h2 { font-family: "Silkscreen", "Courier New", monospace; margin: 0; }
-h1 { font-size: clamp(32px, 7vw, 52px); line-height: 1.05; }
-.lede { color: var(--muted); margin: 8px 0 0; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 18px; }
-a.game { --c: var(--fg); display: grid; gap: 8px; padding: 22px; border-radius: 8px; text-decoration: none; color: inherit;
-  background: var(--surface); border: 1px solid var(--line); border-left: 8px solid var(--c); transition: transform .12s, border-color .12s; }
-a.game:hover, a.game:focus-visible { transform: translateY(-2px); border-color: var(--c); outline: none; }
-a.game h2 { color: var(--c); font-size: 22px; }
-.tag { font-style: italic; color: var(--muted); margin: 0; }
-.how { margin: 0; font-size: 14px; }
-.play { font-family: "Silkscreen", monospace; color: var(--c); font-size: 14px; margin-top: 4px; }
-footer { color: var(--muted); font-size: 13px; }
-@media (prefers-reduced-motion: reduce) { a.game { transition: none; } a.game:hover { transform: none; } }
-</style>
-</head>
-<body>
-<div class="wrap">
-  <header>
-    <h1>Game Shelf</h1>
-    <p class="lede">Five browser games. Pick one and play. Works best with a keyboard and mouse.</p>
-  </header>
-  <div class="grid">
-    <a class="game" href="farmer-tank/" style="--c:var(--c-farm)">
-      <h2>Farmer Tank: Keep Them In!</h2>
-      <p class="tag">You're a fragile robot in an endless living world. Catch wacky creatures and grow the biggest farm.</p>
-      <p class="how">WASD to move, Shift to sprint, left click to shoot, right click to throw, E to gather. Online co-op with a 5-letter code.</p>
-      <span class="play">Play ▸</span>
-    </a>
-    <a class="game" href="swapshot/" style="--c:var(--c-swap)">
-      <h2>Swapshot</h2>
-      <p class="tag">One swap per round. Make it count.</p>
-      <p class="how">A puzzle card game. Swap any two cards in the robots' programs, then run the round. Every round can be won.</p>
-      <span class="play">Play ▸</span>
-    </a>
-    <a class="game" href="tower-of-babble/" style="--c:var(--c-tower)">
-      <h2>Tower of Babble</h2>
-      <p class="tag">You are a baby. You can't walk. You have a shotgun.</p>
-      <p class="how">Push the muzzle into things to shove yourself around, and click to fire. Recoil launches you. Climb the zombie tower.</p>
-      <span class="play">Play ▸</span>
-    </a>
-    <a class="game" href="skill-issue/" style="--c:var(--c-skill)">
-      <h2>Skill Issue</h2>
-      <p class="tag">The most annoying platformer ever made. On purpose.</p>
-      <p class="how">Arrows or A/D to move. Space, W, Up, Z or K to jump. Tap jumps high, hold jumps low. Good luck.</p>
-      <span class="play">Play ▸</span>
-    </a>
-    <a class="game" href="strange-company/" style="--c:var(--c-strange)">
-      <h2>Strange Company</h2>
-      <p class="tag">The Nyetalax are spreading. Your crew is weird, and some of them will betray you. Get the barge to the coast.</p>
-      <p class="how">WASD to move, mouse to aim and attack, Space to dodge. E searches, T talks, R is your special. No cure for infection, so check arms before you recruit.</p>
-      <span class="play">Play ▸</span>
-    </a>
-  </div>
-  <footer>Everything is drawn and synthesized in code. Scores and saves stay in your own browser.</footer>
-</div>
-</body>
-</html>
+*{box-sizing:border-box}
+html{background:var(--room)}
+body{margin:0;background:radial-gradient(1200px 700px at 50% -10%,#2a2140 0%,transparent 60%),var(--room);color:var(--ink);font:15px/1.55 var(--body)}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding-block:44px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:34px}
+.top{display:grid;gap:14px;justify-items:start}
+.eyebrow{font:700 11px/1 var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+.marquee{margin:0;font:400 clamp(40px,8vw,84px)/.92 "Silkscreen",monospace;letter-spacing:.02em;text-wrap:balance;
+  background:linear-gradient(90deg,#ffd166,#ff6b9d,#7ee2ff,#a3e635,#ffd166);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 6px 0 rgba(0,0,0,.6)) drop-shadow(0 0 28px rgba(255,107,157,.25));animation:shine 14s linear infinite}
+@keyframes shine{to{background-position:300% 0}}
+.lede{margin:0;color:var(--dim);max-width:62ch}
+.toprow{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;font:700 13px/1 var(--body);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:12px 16px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--ink);cursor:pointer}
+.btn:hover{background:rgba(255,255,255,.1)}
+.btn.hot{background:#ffd166;color:#1a1305;border-color:transparent}
+.btn.hot:hover{filter:brightness(1.08)}
+.jump{display:flex;flex-wrap:wrap;gap:6px}
+.jump a{font:600 12px/1 var(--body);text-decoration:none;padding:7px 10px;border-radius:99px;border:1px solid var(--line);color:var(--dim);background:rgba(255,255,255,.03)}
+.jump a:hover{color:var(--ink);border-color:rgba(255,255,255,.3)}
+.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:22px}
+.cart{--bg:#1b1a22;--ink2:#f1eef7;--dim2:#b5b0c4;--acc:#ffd166;--accink:#111;--frame:rgba(255,255,255,.14);--tfont:"Silkscreen",monospace;--tsize:30px;--tcase:none;
+  position:relative;display:flex;flex-direction:column;min-width:0;border-radius:18px;overflow:hidden;background:var(--bg);color:var(--ink2);
+  border:1px solid var(--frame);box-shadow:0 22px 50px -28px rgba(0,0,0,.9);transition:transform .2s,box-shadow .2s;scroll-margin-top:16px}
+.cart:hover{transform:translateY(-4px);box-shadow:0 28px 60px -26px var(--acc)}
+.cart.wide{grid-column:1/-1}
+@media (min-width:760px){.cart.wide:not(.t-rust){display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}
+  .cart.wide:not(.t-rust) .screen{aspect-ratio:auto;min-height:100%;border-bottom:0;border-right:1px solid var(--frame)}
+  .cart.wide .body{padding:26px 28px 30px;justify-content:center}}
+.screen{position:relative;display:block;aspect-ratio:16/9;max-width:100%;overflow:hidden;background:#000;border-bottom:1px solid var(--frame)}
+.screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.cart:hover .screen img{transform:scale(1.04)}
+.screen .genre{position:absolute;left:12px;top:12px;font:700 10.5px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;padding:6px 9px;border-radius:7px;background:rgba(0,0,0,.62);color:#fff;backdrop-filter:blur(3px)}
+.body{display:flex;flex-direction:column;gap:12px;padding:18px 20px 20px;flex:1}
+.title{margin:0;font-family:var(--tfont);font-size:var(--tsize);line-height:1;text-transform:var(--tcase);color:var(--acc);text-wrap:balance}
+.title small{display:block;font-size:.5em;margin-top:6px;opacity:.85}
+.tag{margin:0;color:var(--dim2)}
+.keys{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.keys li{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--dim2)}
+.keys kbd{font:600 11.5px/1 var(--mono);padding:5px 7px;border-radius:6px;background:rgba(0,0,0,.28);border:1px solid var(--frame);border-bottom-width:2px;color:var(--ink2)}
+.note{margin:0;font-size:13.5px;color:var(--dim2)}
+.actions{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-top:4px}
+.play{display:inline-flex;align-items:center;gap:8px;font:700 15px/1 var(--body);letter-spacing:.05em;text-transform:uppercase;text-decoration:none;padding:13px 18px;border-radius:12px;background:var(--acc);color:var(--accink);box-shadow:0 5px 0 rgba(0,0,0,.4);transition:transform .12s,filter .12s}
+.play:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.play:active{transform:translateY(3px);box-shadow:0 2px 0 rgba(0,0,0,.4)}
+.sub{font:600 13px/1 var(--body);color:var(--dim2);text-decoration:underline;text-underline-offset:3px}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.badge{font:700 10.5px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;padding:5px 8px;border-radius:6px;border:1px solid currentColor}
+.badge.ok{color:#5ee0a0}.badge.warn{color:#ffb35c}.badge.info{color:#9ec5ff}
+details.more{border-top:1px dashed var(--frame);padding-top:10px}
+details.more summary{cursor:pointer;font:700 12px/1.4 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--dim2)}
+details.more[open] summary{margin-bottom:10px}
+.facts{display:grid;gap:8px;font-size:13px;color:var(--dim2)}
+.facts p{margin:0}
+.mono{font-family:var(--mono);font-size:12.5px;overflow-wrap:anywhere}
+.cmd{display:flex;border-radius:8px;overflow:hidden;background:rgba(0,0,0,.35);border:1px solid var(--frame)}
+.cmd pre{margin:0;padding:9px 11px;font:500 12.5px/1.5 var(--mono);overflow-x:auto;flex:1;min-width:0;color:var(--ink2)}
+.cmd button{font:700 11px var(--body);border:0;border-left:1px solid var(--frame);background:transparent;color:var(--dim2);padding:0 12px;cursor:pointer}
+.cmd button:hover{color:var(--ink2)}
+footer{color:var(--dim);font-size:13.5px;display:grid;gap:6px;max-width:80ch}
+footer ul{margin:0;padding-left:20px;display:grid;gap:4px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #ffd166;outline-offset:3px}
+
+/* ---------- per-game themes ---------- */
+.t-boss{--bg:linear-gradient(160deg,#2a0f4a,#12061f 60%);--ink2:#f6f1ff;--dim2:#c8b9ea;--acc:#ff4fd8;--accink:#1a0420;--frame:rgba(255,79,216,.35);--tfont:"Lilita One",sans-serif;--tsize:44px}
+.t-boss .title{background:linear-gradient(90deg,#ffc933,#ff4fd8,#4ff0ff,#ffc933);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 8s linear infinite}
+.t-boss::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;pointer-events:none;opacity:.35;
+  background:repeating-linear-gradient(90deg,rgba(255,79,216,.5) 0 1px,transparent 1px 44px),repeating-linear-gradient(0deg,rgba(255,79,216,.5) 0 1px,transparent 1px 18px);mask-image:linear-gradient(transparent,#000)}
+.t-strange{--bg:radial-gradient(circle at 85% 8%,rgba(160,0,10,.35),transparent 40%),radial-gradient(circle at 10% 90%,rgba(120,0,0,.45),transparent 35%),#0a0505;--ink2:#f3e7e5;--dim2:#c4a4a0;--acc:#e3262b;--accink:#140202;--frame:rgba(227,38,43,.35);--tfont:"Pixelify Sans",monospace;--tsize:36px;--tcase:uppercase}
+.t-strange .title{text-shadow:0 3px 0 #4a0000,0 0 18px rgba(227,38,43,.5);position:relative;padding-bottom:10px}
+.t-strange .title::after{content:"";position:absolute;left:4px;bottom:0;width:150px;height:12px;background:
+  radial-gradient(circle at 10px 0,#e3262b 3px,transparent 4px),radial-gradient(circle at 46px 2px,#b31217 2px,transparent 3px),linear-gradient(#e3262b,#e3262b) 9px 0/3px 9px no-repeat,linear-gradient(#b31217,#b31217) 70px 0/2px 6px no-repeat,linear-gradient(#e3262b,#e3262b) 118px 0/3px 11px no-repeat}
+.t-murm{--bg:linear-gradient(180deg,#5b4a8a 0%,#c06c84 55%,#f8b195 100%);--ink2:#fff8f2;--dim2:#fde6dc;--acc:#2b1d33;--accink:#ffe3cf;--frame:rgba(255,255,255,.35);--tfont:"Cormorant Garamond",serif;--tsize:46px}
+.t-murm .title{font-style:italic;color:#fff8f2;text-shadow:0 2px 18px rgba(80,30,60,.45)}
+.t-murm .tag,.t-murm .note,.t-murm .keys li{color:#fff3ec}
+.t-murm .keys kbd{background:rgba(43,29,51,.35)}
+.t-come{--bg:linear-gradient(160deg,#141a3a,#0a0e22);--ink2:#eef1ff;--dim2:#a8b0d6;--acc:#ffb547;--accink:#1d1203;--frame:rgba(91,124,255,.55);--tfont:"Bungee",sans-serif;--tsize:36px}
+.t-come{box-shadow:0 0 0 1px rgba(91,124,255,.4),0 0 30px -6px rgba(91,124,255,.6),0 22px 50px -28px #000}
+.t-come .title{color:#fff;text-shadow:0 0 14px rgba(126,226,255,.6)}
+.t-come .title b{color:#ffb547;font-weight:400;text-shadow:0 0 14px rgba(255,181,71,.6)}
+.t-broad{--bg:linear-gradient(180deg,#f3ead4 0%,#e8dcbc 100%);--ink2:#2a1e14;--dim2:#5b4733;--acc:#b0201c;--accink:#fff4e4;--frame:#8a6a44;--tfont:"UnifrakturCook",serif;--tsize:44px}
+.t-broad::after{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;background:radial-gradient(14px 8px at 14px 0,transparent 98%,#2c5c7a) 0 0/28px 14px repeat-x;opacity:.75}
+.t-broad .body{padding-bottom:28px}
+.t-broad .keys kbd{background:#fff7e6;color:#2a1e14;border-color:#8a6a44}
+.t-broad .play{box-shadow:0 5px 0 #5c0f0d}
+.t-tower{--bg:repeating-conic-gradient(#3a2430 0 25%,#33202b 0 50%) 0 0/28px 28px;--ink2:#fbeee2;--dim2:#e2c8c0;--acc:#ff8fb1;--accink:#2b0d18;--frame:rgba(255,143,177,.35);--tfont:"VT323",monospace;--tsize:46px;--tcase:uppercase}
+.t-tower .body{background:linear-gradient(rgba(25,14,20,.86),rgba(25,14,20,.92))}
+.t-tower .title{color:#fbeee2;letter-spacing:.04em}
+.t-tower .title small{color:#ff8fb1;font-size:.62em}
+.t-farm{--bg:linear-gradient(180deg,#1d2a17,#141d10);--ink2:#eef6e2;--dim2:#b7c9a4;--acc:#9bd65a;--accink:#0f1a07;--frame:rgba(155,214,90,.35);--tfont:"Silkscreen",monospace;--tsize:32px;--tcase:uppercase}
+.t-farm .title small{color:#ffd166}
+.t-farm::after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:linear-gradient(90deg,#4f8a2b 0 8px,#3d6d21 8px 16px) 0 0/16px 10px repeat-x;box-shadow:0 -4px 0 #6fae3a}
+.t-farm .body{padding-bottom:28px}
+.t-swap{--bg:linear-gradient(180deg,#0e2a33,#0a1d24);--ink2:#e6fbff;--dim2:#9fc7d1;--acc:#2fd6c3;--accink:#05201c;--frame:rgba(47,214,195,.35);--tfont:"Press Start 2P",monospace;--tsize:26px;--tcase:uppercase}
+.t-swap .title{color:#3fe0e8;text-shadow:3px 3px 0 #0b5560}
+.t-swap .title b{color:#ff9a3c;font-weight:400;text-shadow:3px 3px 0 #6a2e00}
+.t-swap::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 2px,transparent 2px 4px);z-index:1}
+.t-skill{--bg:linear-gradient(180deg,#5b8fb0 0%,#9db6c4 60%,#7aa36b 100%);--ink2:#10202a;--dim2:#1f3644;--acc:#ffd23f;--accink:#2a2000;--frame:rgba(255,255,255,.45);--tfont:"Press Start 2P",monospace;--tsize:24px;--tcase:uppercase}
+.t-skill .title{color:#ffd23f;text-shadow:3px 3px 0 #7a5a00,0 0 1px #000}
+.t-skill .tag{font-family:"Comic Sans MS","Comic Neue",cursive;color:#10202a}
+.t-skill .keys kbd{background:rgba(255,255,255,.55);color:#10202a}
+.t-skill .play{transform:rotate(-1.5deg)}
+.t-act{--bg:radial-gradient(circle at 50% 0,rgba(57,255,160,.18),transparent 55%),#0b0d18;--ink2:#ecedf6;--dim2:#a5abc6;--acc:#5bf0a5;--accink:#062014;--frame:rgba(91,240,165,.35);--tfont:"Bungee",sans-serif;--tsize:34px}
+.t-act .title{color:#fff}
+.t-act .title b{color:#5bf0a5;font-weight:400;text-shadow:0 0 16px rgba(91,240,165,.55)}
+.t-rust{--bg:linear-gradient(160deg,#1a0f08,#070504 70%);--ink2:#f4ece4;--dim2:#c9b4a2;--acc:#e06a1f;--accink:#1a0a02;--frame:rgba(224,106,31,.4);--tfont:"Rye",serif;--tsize:40px}
+.t-rust{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr)}
+.t-rust .screen{aspect-ratio:1/1;border-bottom:0;border-right:1px solid var(--frame)}
+.t-rust .title{color:#f4ece4;text-shadow:0 0 22px rgba(224,106,31,.55)}
+.t-rust .title small{font-family:var(--body);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--acc);margin:0 0 10px}
+@media (max-width:720px){.t-rust{grid-template-columns:1fr}.t-rust .screen{border-right:0;border-bottom:1px solid var(--frame)}}
+@media (max-width:420px){.cart{--tsize:28px}.t-boss,.t-murm,.t-broad,.t-tower{--tsize:36px}.t-swap,.t-skill{--tsize:20px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body><div class="wrap"><header class="top"><span class="eyebrow">Free browser games · keyboard and mouse</span>
+<h1 class="marquee">Game Shelf</h1>
+<p class="lede">9 games, all free to play right here. Pick one.</p>
+<nav class="jump"><a href="#boss-arcade">Boss Arcade</a><a href="#strange-company">Strange Company</a><a href="#murmuration">Murmuration</a><a href="#comeback">Comeback</a><a href="#broadside">Broadside</a><a href="#tower-of-babble">Tower of Babble</a><a href="#farmer-tank">Farmer Tank</a><a href="#swapshot">Swapshot</a><a href="#skill-issue">Skill Issue</a></nav></header><main class="shelf"><article class="cart t-boss wide" id="boss-arcade">
+<a class="screen" href="boss-arcade/" aria-label="Play Boss Arcade"><img src="shots/boss-arcade.jpg" alt="Boss Arcade title screen" loading="lazy"><span class="genre">Bullet-hell boss rush</span></a>
+<div class="body">
+<h2 class="title">Boss Arcade</h2>
+<p class="tag">Nine bosses. Dash through bullets, graze to go Golden, survive all eight stages.</p>
+<ul class="keys"><li><kbd>WASD</kbd>move</li><li><kbd>Space</kbd>dash</li><li><kbd>P</kbd>pause</li><li><kbd>← →</kbd>pick a boss</li></ul>
+<p class="note">Two song-saga bosses are played to full songs, including Rust on the Porch, with every attack on the beat.</p>
+<div class="actions"><a class="play" href="boss-arcade/">Play ▸</a>
+</div></div></article>
+<article class="cart t-strange" id="strange-company">
+<a class="screen" href="strange-company/" aria-label="Play Strange Company"><img src="shots/strange-company.jpg" alt="Strange Company title screen" loading="lazy"><span class="genre">Dark survival</span></a>
+<div class="body">
+<h2 class="title">Strange Company</h2>
+<p class="tag">The Nyetalax are spreading. Your crew is weird, and some of them will betray you. Get the barge to the coast.</p>
+<ul class="keys"><li><kbd>WASD</kbd>move</li><li><kbd>Click</kbd>attack</li><li><kbd>Space</kbd>dodge</li><li><kbd>E / T</kbd>search / talk</li><li><kbd>R</kbd>special</li><li><kbd>G</kbd>molotov</li></ul>
+<p class="note">No cure for infection, so check arms before you recruit. Run from Slashers.</p>
+<div class="actions"><a class="play" href="strange-company/">Play ▸</a>
+</div></div></article>
+<article class="cart t-murm" id="murmuration">
+<a class="screen" href="murmuration/" aria-label="Play Murmuration"><img src="shots/murmuration.jpg" alt="Murmuration title screen" loading="lazy"><span class="genre">Flock flying</span></a>
+<div class="body">
+<h2 class="title">Murmuration</h2>
+<p class="tag">Steer a flock of starlings across seven evenings to the reedbed roost before dark.</p>
+<ul class="keys"><li><kbd>Mouse</kbd>steer</li><li><kbd>Hold click</kbd>pack tight</li><li><kbd>Space</kbd>flash</li><li><kbd>Shift</kbd>sprint</li><li><kbd>H</kbd>photo mode</li></ul>
+<p class="note">Gather strays, feed on gnats, and dodge peregrines. Free flight mode is on the title screen.</p>
+<div class="actions"><a class="play" href="murmuration/">Play ▸</a>
+</div></div></article>
+<article class="cart t-come" id="comeback">
+<a class="screen" href="comeback/" aria-label="Play Comeback"><img src="shots/comeback.jpg" alt="Comeback title screen" loading="lazy"><span class="genre">Boomerang roguelite</span></a>
+<div class="body">
+<h2 class="title">COME<b>BACK</b></h2>
+<p class="tag">One weapon, and it has to come back. Chase the high score.</p>
+<ul class="keys"><li><kbd>WASD</kbd>move</li><li><kbd>Hold click</kbd>steer the boomerang</li><li><kbd>Release</kbd>it flies home</li><li><kbd>Space</kbd>dodge roll</li></ul>
+<p class="note">Every enemy can be beaten at least three ways. Daily Run is the same for everyone.</p>
+<div class="actions"><a class="play" href="comeback/">Play ▸</a>
+</div></div></article>
+<article class="cart t-broad" id="broadside">
+<a class="screen" href="broadside/" aria-label="Play Broadside"><img src="shots/broadside.jpg" alt="Broadside title screen" loading="lazy"><span class="genre">Pirate artillery</span></a>
+<div class="body">
+<h2 class="title">Broadside</h2>
+<p class="tag">Build a floating fortress. Bolt on ridiculous cannons. Sink the other ship.</p>
+<ul class="keys"><li><kbd>Click</kbd>buy and bolt on parts</li><li><kbd>Drag back</kbd>aim a gun</li><li><kbd>Release</kbd>fire</li></ul>
+<p class="note">Sink the enemy hull or knock its guns into the sea. The wind changes every turn.</p>
+<div class="actions"><a class="play" href="broadside/">Play ▸</a>
+</div></div></article>
+<article class="cart t-tower" id="tower-of-babble">
+<a class="screen" href="tower-of-babble/" aria-label="Play Tower of Babble"><img src="shots/tower-of-babble.jpg" alt="Tower of Babble title screen" loading="lazy"><span class="genre">Foddian zombie climber</span></a>
+<div class="body">
+<h2 class="title">Tower<small>of Babble</small></h2>
+<p class="tag">You are a baby. You can&#x27;t walk. You have a shotgun.</p>
+<ul class="keys"><li><kbd>Mouse</kbd>push with the muzzle</li><li><kbd>Click</kbd>fire and fly</li><li><kbd>D</kbd>daily tower</li><li><kbd>L</kbd>aim mode</li></ul>
+<p class="note">Modes: The Tower, The Climb, Descent and Last Shell.</p>
+<div class="actions"><a class="play" href="tower-of-babble/">Play ▸</a>
+</div></div></article>
+<article class="cart t-farm" id="farmer-tank">
+<a class="screen" href="farmer-tank/" aria-label="Play Farmer Tank"><img src="shots/farmer-tank.jpg" alt="Farmer Tank title screen" loading="lazy"><span class="genre">Survival farming</span></a>
+<div class="body">
+<h2 class="title">Farmer Tank<small>Keep Them In!</small></h2>
+<p class="tag">You&#x27;re a fragile robot in an endless living world. Catch wacky creatures and grow the biggest farm.</p>
+<ul class="keys"><li><kbd>WASD</kbd>move</li><li><kbd>Shift</kbd>sprint</li><li><kbd>Click</kbd>shoot</li><li><kbd>Right click</kbd>throw</li><li><kbd>E</kbd>gather</li></ul>
+<p class="note">Online co-op: the host shares a 5-letter code.</p>
+<div class="actions"><a class="play" href="farmer-tank/">Play ▸</a>
+</div></div></article>
+<article class="cart t-swap" id="swapshot">
+<a class="screen" href="swapshot/" aria-label="Play Swapshot"><img src="shots/swapshot.jpg" alt="Swapshot title screen" loading="lazy"><span class="genre">Puzzle card game</span></a>
+<div class="body">
+<h2 class="title">SWAP<b>SHOT</b></h2>
+<p class="tag">One swap per round. Make it count.</p>
+<ul class="keys"><li><kbd>Click</kbd>pick two cards to swap</li><li><kbd>Run</kbd>test the round</li></ul>
+<p class="note">Your robot BOLT races SCRAP up a grid. Every round is checked by a solver to be winnable.</p>
+<div class="actions"><a class="play" href="swapshot/">Play ▸</a>
+</div></div></article>
+<article class="cart t-skill" id="skill-issue">
+<a class="screen" href="skill-issue/" aria-label="Play Skill Issue"><img src="shots/skill-issue.jpg" alt="Skill Issue title screen" loading="lazy"><span class="genre">Annoying platformer</span></a>
+<div class="body">
+<h2 class="title">Skill Issue</h2>
+<p class="tag">A precision platformer, imprecisely.</p>
+<ul class="keys"><li><kbd>← → / A D</kbd>move, on ice</li><li><kbd>Space</kbd>jump: tap high, hold low</li></ul>
+<p class="note">Input delay, fake floors, sneezes and a goal that runs away. Every level is still beatable.</p>
+<div class="actions"><a class="play" href="skill-issue/">Play ▸</a>
+</div></div></article></main><footer><p>Everything is drawn and synthesized in code. Scores and saves stay in your own browser.</p></footer></div></body></html>
